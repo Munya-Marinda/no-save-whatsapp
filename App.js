@@ -1,11 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import SAVE_LESS_WHATAPP_CHAT from "./src/app-screens/save_less_whatapp_chat/save_less_whatapp_chat.js";
+import { StyleSheet, View, Text } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <StatusBar backgroundColor={"white"} barStyle={"light-content"} />
+      <SAVE_LESS_WHATAPP_CHAT />
     </View>
   );
 }
@@ -13,8 +14,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "black",
+    // backgroundColor: "rgb(178, 255, 189)",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });

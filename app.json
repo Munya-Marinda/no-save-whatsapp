@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "no-save-whatsapp",
+    "name": "No Save Whatsapp",
     "slug": "no-save-whatsapp",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.munya_m.nosavewhatsapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2ef8886c-5b45-4d39-82b5-badbf9ee3b6c"
+      }
     }
   }
 }
