@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Munya",
+    "numbers": ["0987654321", "1234567890"],
+    "notes": "Some notes about this contact. It can be anything that you'd like to describe them. The more descriptive it is the better.",
+    "email": "munya@gmail.com",
+    "links": [
+      "www.munya.com",
+      "www.facebook.com/munya",
+      "www.twitter.com/munya",
+      "www.linkedin.com/munya"
+    ],
+    "tags": ["friend", "business-partner", "lover", "spouse", "room-mate"],
+    "birthdate": "12/05/1766",
+    "meta_data": [
+      {
+        "address": "1234 The Long Road, Big Area, Large City, Massive Region, Enourmous Country, 7766",
+        "nickname": "Munya M. Dev"
+      }
+    ]
+  },
+  {
+    "name": "Madeupguy",
+    "numbers": ["99999999999", "1111111111"],
+    "notes": "Xxxxx xxxxx xxxxxx xxxxxx. Yyyyyy yyyyyy yyyyy yyyyyy yyy yyyyyyy yyyyyy yyyyyy. Zzzz zzzzzz zzzz zzzzzzzzz zzzzzzzz zzzzzzzz.",
+    "email": "madeupguy@emailserver.com",
+    "links": [
+      "www.madeupguy.com",
+      "www.facebook.com/madeupguy",
+      "www.twitter.com/madeupguy",
+      "www.linkedin.com/madeupguy"
+    ],
+    "tags": ["brother", "project-partner", "enemy", "ignore", "rich"],
+    "birthdate": "12/05/1988",
+    "meta_data": [
+      {
+        "business": "Farming chickens, cattles and sheep",
+        "interests": "fishing, rock-climbing, networking"
+      }
+    ]
+  }
+]

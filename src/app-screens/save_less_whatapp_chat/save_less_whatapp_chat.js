@@ -1,8 +1,4 @@
-// Example to Send WhatsApp Message from React Native App
-// https://aboutreact.com/send-whatsapp-message/
-
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,24 +10,41 @@ import {
   Dimensions,
   ImageBackground,
 } from "react-native";
+
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
 const App = () => {
+  //
   const [mobileNumber, setMobileNumber] = useState("");
   const [whatsAppMsg, setWhatsAppMsg] = useState(
     "Hi. My name is [name]. How are you today?"
   );
-
+  //
+  const textIsNuber = (text) => {
+    const charNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
+    for (let i = 0; i < text.length; i++) {
+      const char = text[i];
+      if (charNumbers.indexOf(char) === -1) {
+        setMobileNumber("");
+        return false;
+      }
+      return true;
+    }
+  };
+  //
   const initiateWhatsApp = () => {
-    if (mobileNumber.length !== 11) {
+    if (!textIsNuber(mobileNumber)) {
+      alert("Please enter a valid number!");
+      return;
+    }
+    if (mobileNumber.length !== 9) {
       alert("Please insert correct South African WhatsApp number");
       return;
     }
     let url = "whatsapp://send?text=" + whatsAppMsg + "&phone=" + mobileNumber;
     Linking.openURL(url)
-      .then((data) => {
-        console.log("WhatsApp Opened");
+      .then(() => { 
       })
       .catch(() => {
         alert("Make sure Whatsapp installed on your device");
@@ -56,13 +69,22 @@ const App = () => {
           <Text style={styles.titleTextsmaller}>
             11 Digit South Africa Number
           </Text>
-          <TextInput
-            value={mobileNumber}
-            onChangeText={(mobileNumber) => setMobileNumber(mobileNumber)}
-            placeholder={"Eg. 27612345678"}
-            keyboardType="numeric"
-            style={styles.textInput}
-          />
+          <View style={styles.container_2}>
+            <TextInput
+              value={"+27"}
+              editable={false}
+              placeholder={"+27"}
+              keyboardType="numeric"
+              style={styles.textInput_2}
+            />
+            <TextInput
+              value={mobileNumber}
+              onChangeText={(mobileNumber) => setMobileNumber(mobileNumber)}
+              placeholder={"612345678"}
+              keyboardType="numeric"
+              style={styles.textInput}
+            />
+          </View>
           <Text style={styles.titleTextsmall}>Enter WhatsApp Message</Text>
           <Text style={styles.titleTextsmaller}>
             That you want to send to the number
@@ -100,6 +122,16 @@ const styles = StyleSheet.create({
     padding: 30,
     width: windowWidth * 0.8,
   },
+  container_2: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "rgb(231,255,231)",
+    borderRadius: 15,
+    padding: 10,
+    width: windowWidth * 0.8,
+  },
   titleText: {
     fontSize: 22,
     textAlign: "center",
@@ -130,13 +162,25 @@ const styles = StyleSheet.create({
   textInput: {
     height: 40,
     borderWidth: 1,
-    width: windowWidth * 0.7,
+    width: windowWidth * 0.5,
     padding: 10,
     marginBottom: 20,
     borderRadius: 7,
     borderColor: "rgb(0,149,0)",
   },
+  textInput_2: {
+    height: 40,
+    width: windowWidth / 8,
+    padding: 10,
+    marginBottom: 20,
+    marginRight: 10,
+    borderRadius: 7,
+    color: "rgb(255, 255, 255)",
+    backgroundColor: "rgb(66, 145, 0)",
+  },
   textMultilineInput: {
+    textAlign: "left",
+    textAlignVertical: "top",
     height: 40,
     borderWidth: 1,
     width: windowWidth * 0.7,
